@@ -33,13 +33,44 @@ function aigq_render_settings_page() {
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-        <form action="options.php" method="post">
-            <?php
-            settings_fields('aigq_settings');
-            do_settings_sections('aigq-settings');
-            submit_button();
+        <?php
+        $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'settings';
+        ?>
+        <h2 class="nav-tab-wrapper">
+            <a href="?page=aigq-settings&tab=settings" class="nav-tab <?php echo $active_tab == 'settings' ? 'nav-tab-active' : ''; ?>"><?php _e('Settings', 'aigq'); ?></a>
+            <a href="?page=aigq-settings&tab=students" class="nav-tab <?php echo $active_tab == 'students' ? 'nav-tab-active' : ''; ?>"><?php _e('Students', 'aigq'); ?></a>
+            <a href="?page=aigq-settings&tab=teachers" class="nav-tab <?php echo $active_tab == 'teachers' ? 'nav-tab-active' : ''; ?>"><?php _e('Teachers', 'aigq'); ?></a>
+            <a href="?page=aigq-settings&tab=quizzes" class="nav-tab <?php echo $active_tab == 'quizzes' ? 'nav-tab-active' : ''; ?>"><?php _e('Quizzes', 'aigq'); ?></a>
+            <a href="?page=aigq-settings&tab=courses" class="nav-tab <?php echo $active_tab == 'courses' ? 'nav-tab-active' : ''; ?>"><?php _e('Courses', 'aigq'); ?></a>
+            <a href="?page=aigq-settings&tab=levels" class="nav-tab <?php echo $active_tab == 'levels' ? 'nav-tab-active' : ''; ?>"><?php _e('Levels', 'aigq'); ?></a>
+
+            <a href="?page=aigq-settings&tab=quiz-results" class="nav-tab <?php echo $active_tab == 'quiz-results' ? 'nav-tab-active' : ''; ?>"><?php _e('Quiz Results', 'aigq'); ?></a>
+        </h2>
+        <?php
+        if ($active_tab == 'settings') {
             ?>
-        </form>
+            <form action="options.php" method="post">
+                <?php
+                settings_fields('aigq_settings');
+                do_settings_sections('aigq-settings');
+                submit_button();
+                ?>
+            </form>
+            <?php
+        } elseif ($active_tab == 'students') {
+            aigq_render_students_table();
+        } elseif ($active_tab == 'teachers') {
+            aigq_render_teachers_table();
+        } elseif ($active_tab == 'quizzes') {
+            aigq_render_quizzes_table();
+        } elseif ($active_tab == 'courses') {
+            aigq_render_taxonomy_table('course');
+        } elseif ($active_tab == 'levels') {
+            aigq_render_taxonomy_table('level');
+        } else {
+            aigq_render_quiz_results_page();
+        }
+        ?>
     </div>
     <?php
 }

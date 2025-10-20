@@ -8,22 +8,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-/**
- * Add the admin menu for the quiz results page.
- *
- * This function is hooked into the 'admin_menu' action.
- */
-function aigq_add_quiz_results_menu() {
-    add_submenu_page(
-        'aigq-settings',
-        __('Quiz Results', 'aigq'),
-        __('Quiz Results', 'aigq'),
-        'edit_posts', // Capability for teachers
-        'aigq-quiz-results',
-        'aigq_render_quiz_results_page'
-    );
-}
-add_action('admin_menu', 'aigq_add_quiz_results_menu');
+
 
 /**
  * Render the quiz results page.

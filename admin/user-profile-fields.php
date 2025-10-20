@@ -78,6 +78,8 @@ function aigq_save_user_profile_fields($user_id) {
             add_user_meta($user_id, 'level', intval($level));
         }
     }
+
+
 }
 add_action('personal_options_update', 'aigq_save_user_profile_fields');
 add_action('edit_user_profile_update', 'aigq_save_user_profile_fields');
