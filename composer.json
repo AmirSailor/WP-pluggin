@@ -1,0 +1,13 @@
+{
+    "name": "AMIRSAILOR/ai-quiz-generator-from-voice",
+    "description": "A WordPress plugin to generate quizzes from audio lectures using AI.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "AmirSailor",
+            "homepage": "https://t.me/AMIR_SAILOR"
+        }
+    ],
+    "require": {}
+}
