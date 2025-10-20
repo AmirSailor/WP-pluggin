@@ -16,6 +16,7 @@ define( 'AIGQ_PLUGIN', __FILE__ );
 define( 'AIGQ_PLUGIN_BASENAME', plugin_basename( AIGQ_PLUGIN ) );
 define( 'AIGQ_PLUGIN_NAME', trim( dirname( AIGQ_PLUGIN_BASENAME ), '/' ) );
 define( 'AIGQ_PLUGIN_DIR', untrailingslashit( dirname( AIGQ_PLUGIN ) ) );
+define( 'AIGQ_PLUGIN_FILE', __FILE__ );
 
 require_once AIGQ_PLUGIN_DIR . '/includes/load.php';
 
