@@ -151,5 +151,49 @@ function aigq_register_post_types() {
         'show_in_rest' => true,
     ];
     register_taxonomy('level', ['lecture', 'quiz'], $level_args);
+
+    // Register Class Post Type
+    $class_labels = [
+        'name' => _x('Classes', 'Post Type General Name', 'aigq'),
+        'singular_name' => _x('Class', 'Post Type Singular Name', 'aigq'),
+        'menu_name' => __('Classes', 'aigq'),
+        'name_admin_bar' => __('Class', 'aigq'),
+        'archives' => __('Class Archives', 'aigq'),
+        'attributes' => __('Class Attributes', 'aigq'),
+        'parent_item_colon' => __('Parent Class:', 'aigq'),
+        'all_items' => __('All Classes', 'aigq'),
+        'add_new_item' => __('Add New Class', 'aigq'),
+        'add_new' => __('Add New', 'aigq'),
+        'new_item' => __('New Class', 'aigq'),
+        'edit_item' => __('Edit Class', 'aigq'),
+        'update_item' => __('Update Class', 'aigq'),
+        'view_item' => __('View Class', 'aigq'),
+        'view_items' => __('View Classes', 'aigq'),
+        'search_items' => __('Search Class', 'aigq'),
+        'not_found' => __('Not found', 'aigq'),
+        'not_found_in_trash' => __('Not found in Trash', 'aigq'),
+    ];
+    $class_args = [
+        'label' => __('Class', 'aigq'),
+        'description' => __('Post Type for Classes', 'aigq'),
+        'labels' => $class_labels,
+        'supports' => ['title', 'editor', 'author'],
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_icon' => 'dashicons-groups',
+        'menu_position' => 7,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'show_in_rest' => true,
+    ];
+    register_post_type('class', $class_args);
 }
 add_action('init', 'aigq_register_post_types', 0);

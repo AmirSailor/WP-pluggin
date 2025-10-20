@@ -39,7 +39,22 @@ class AI_Quiz_Generator {
      * Hook into actions and filters.
      */
     private function init_hooks() {
-        register_activation_hook(AIGQ_PLUGIN_FILE, ['aigq_create_custom_tables', 'aigq_add_custom_roles']);
-        register_deactivation_hook(AIGQ_PLUGIN_FILE, ['aigq_remove_custom_roles']);
+        register_activation_hook(AIGQ_PLUGIN_FILE, [__CLASS__, 'activate']);
+        register_deactivation_hook(AIGQ_PLUGIN_FILE, [__CLASS__, 'deactivate']);
+    }
+
+    /**
+     * Plugin activation.
+     */
+    public static function activate() {
+        aigq_create_custom_tables();
+        aigq_add_custom_roles();
+    }
+
+    /**
+     * Plugin deactivation.
+     */
+    public static function deactivate() {
+        aigq_remove_custom_roles();
     }
 }

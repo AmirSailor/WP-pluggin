@@ -17,3 +17,14 @@ require_once AIGQ_PLUGIN_DIR . '/includes/api-loader.php';
 require_once AIGQ_PLUGIN_DIR . '/includes/notifications.php';
 require_once AIGQ_PLUGIN_DIR . '/includes/class-ai-quiz-generator.php';
 require_once AIGQ_PLUGIN_DIR . '/lib/fpdf.php';
+require_once AIGQ_PLUGIN_DIR . '/includes/registration.php';
+
+// Admin files
+require_once AIGQ_PLUGIN_DIR . '/admin/lecture-meta-box.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/management-page.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/quiz-results-page.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/settings-page.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/teacher-upload-page.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/user-profile-fields.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/taxonomy-fields.php';
+require_once AIGQ_PLUGIN_DIR . '/admin/class-meta-box.php';
