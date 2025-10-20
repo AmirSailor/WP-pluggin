@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define( 'AIGQ_VERSION', '1.0.1' );
+define( 'AIGQ_VERSION', '1.1.0' );
 define( 'AIGQ_PLUGIN', __FILE__ );
 define( 'AIGQ_PLUGIN_BASENAME', plugin_basename( AIGQ_PLUGIN ) );
 define( 'AIGQ_PLUGIN_NAME', trim( dirname( AIGQ_PLUGIN_BASENAME ), '/' ) );
